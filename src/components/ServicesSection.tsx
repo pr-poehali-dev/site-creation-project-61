@@ -5,28 +5,28 @@ import Icon from '@/components/ui/icon';
 
 const services = [
   {
-    icon: 'Rocket',
-    title: 'Стратегия и консалтинг',
-    description: 'Разработка бизнес-стратегии и аудит процессов для роста вашего бизнеса',
-    features: ['Анализ рынка', 'Конкурентный анализ', 'Дорожная карта']
+    icon: 'Truck',
+    title: 'Джип-туры к вулканам',
+    description: 'Экстремальные поездки на внедорожниках к действующим вулканам Камчатки',
+    features: ['Вулканы Мутновский и Горелый', 'Профессиональные гиды', 'Обед на природе']
   },
   {
-    icon: 'Palette',
-    title: 'Дизайн и брендинг',
-    description: 'Создание уникального визуального стиля и идентичности бренда',
-    features: ['Фирменный стиль', 'UI/UX дизайн', 'Брендбук']
+    icon: 'Fish',
+    title: 'Рыбалка на реке Авача',
+    description: 'Незабываемая рыбалка на лососевых в одной из самых рыбных рек Камчатки',
+    features: ['Ловля лосося и гольца', 'Снасти включены', 'Опытный инструктор']
   },
   {
-    icon: 'Code',
-    title: 'Разработка',
-    description: 'Создание современных веб-приложений и мобильных решений',
-    features: ['Веб-разработка', 'Мобильные приложения', 'API интеграция']
+    icon: 'Waves',
+    title: 'Паратунка',
+    description: 'Отдых в термальных источниках с целебными свойствами и spa-процедурами',
+    features: ['Горячие источники', 'Массаж и spa', 'Трансфер включён']
   },
   {
-    icon: 'TrendingUp',
-    title: 'Маркетинг',
-    description: 'Продвижение и масштабирование вашего бизнеса в digital',
-    features: ['SMM', 'Контент-маркетинг', 'Performance']
+    icon: 'Shell',
+    title: 'Крабовое сафари',
+    description: 'Морская прогулка по Авачинской бухте с ловлей и дегустацией камчатского краба',
+    features: ['Ловля краба', 'Приготовление на месте', 'Экскурсия по бухте']
   }
 ];
 
@@ -110,11 +110,11 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <Badge className="bg-accent/10 text-accent border-accent/20 mb-4">
-              Что мы делаем
+              Популярные направления
             </Badge>
-            <h2 className="text-5xl font-bold mb-4">Наши услуги</h2>
+            <h2 className="text-5xl font-bold mb-4">Наши туры</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Полный спектр digital услуг для запуска и масштабирования вашего бизнеса
+              Лучшие маршруты для знакомства с дикой природой Камчатки
             </p>
           </div>
 
