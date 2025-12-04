@@ -2,13 +2,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import { useState } from 'react';
 
 const services = [
   {
     icon: 'Truck',
     title: 'Джип-туры по Камчатке',
     description: 'Экстремальные поездки на внедорожниках к действующим вулканам и горным массивам',
-    features: ['Вулканы Мутновский и Горелый', 'Массив Вачкажец', 'Профессиональные гиды']
+    features: ['Вулканы Мутновский и Горелый', 'Массив Вачкажец', 'Профессиональные гиды'],
+    detailedDescription: 'Джип-туры по Камчатке включают в себя более 20-ти маршрутов, чтобы показать вам настоящую Камчатку — дикую, мощную и доступную на внедорожнике. Выберите свой уровень драйва: от фото-сафари до настоящей экспедиции.'
   },
   {
     icon: 'Fish',
@@ -116,6 +118,8 @@ interface ServicesSectionProps {
 }
 
 export default function ServicesSection({ scrollToSection }: ServicesSectionProps) {
+  const [expandedService, setExpandedService] = useState<number | null>(null);
+
   return (
     <>
       <section id="services" className="py-20 px-6 bg-card/30">
@@ -145,7 +149,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                   <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-muted-foreground">
                         <Icon name="Check" size={16} className="text-primary" />
@@ -153,6 +157,36 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                       </li>
                     ))}
                   </ul>
+                  
+                  {service.detailedDescription && (
+                    <>
+                      {expandedService === index && (
+                        <div className="mt-4 p-4 bg-background/50 rounded-lg border border-border/30">
+                          <p className="text-muted-foreground leading-relaxed">
+                            {service.detailedDescription}
+                          </p>
+                        </div>
+                      )}
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        className="w-full mt-2"
+                        onClick={() => setExpandedService(expandedService === index ? null : index)}
+                      >
+                        {expandedService === index ? (
+                          <>
+                            Скрыть подробности
+                            <Icon name="ChevronUp" size={16} className="ml-2" />
+                          </>
+                        ) : (
+                          <>
+                            Подробнее
+                            <Icon name="ChevronDown" size={16} className="ml-2" />
+                          </>
+                        )}
+                      </Button>
+                    </>
+                  )}
                 </CardContent>
               </Card>
             ))}
