@@ -44,44 +44,44 @@ const services = [
 
 const pricingPlans = [
   {
-    name: 'Старт',
-    price: '50 000',
-    period: 'месяц',
-    description: 'Для начинающих проектов',
+    name: 'Однодневный',
+    price: '8 500',
+    period: '1 день',
+    description: 'Идеально для знакомства',
     features: [
-      'До 20 часов работы',
-      '2 правки включены',
-      'Email поддержка',
-      'Базовая аналитика'
+      'Один тур на выбор',
+      'Трансфер включён',
+      'Профессиональный гид',
+      'Обед на природе'
     ],
     highlighted: false
   },
   {
-    name: 'Рост',
-    price: '120 000',
-    period: 'месяц',
-    description: 'Для развивающихся компаний',
+    name: 'Приключение',
+    price: '35 000',
+    period: '3 дня',
+    description: 'Погружение в природу Камчатки',
     features: [
-      'До 60 часов работы',
-      'Безлимитные правки',
-      'Приоритетная поддержка',
-      'Расширенная аналитика',
-      'Выделенный менеджер'
+      '3 тура из программы',
+      'Проживание в отеле',
+      'Все трансферы',
+      'Питание (завтрак + обед)',
+      'Фотосессия в подарок'
     ],
     highlighted: true
   },
   {
-    name: 'Масштаб',
-    price: 'Индивидуально',
-    period: 'проект',
-    description: 'Для крупных задач',
+    name: 'Полное погружение',
+    price: '75 000',
+    period: '7 дней',
+    description: 'Максимальный опыт',
     features: [
-      'Неограниченные часы',
-      'Команда специалистов',
-      '24/7 поддержка',
-      'Полная аналитика',
-      'Персональный аккаунт-менеджер',
-      'SLA гарантии'
+      'Все туры программы',
+      'Комфортное проживание',
+      'Полный пансион',
+      'Личный гид-сопровождающий',
+      'Трансфер из/в аэропорт',
+      'Сувениры в подарок'
     ],
     highlighted: false
   }
@@ -164,11 +164,11 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <Badge className="bg-secondary/10 text-secondary border-secondary/20 mb-4">
-              Прозрачные цены
+              Туристические пакеты
             </Badge>
-            <h2 className="text-5xl font-bold mb-4">Тарифные планы</h2>
+            <h2 className="text-5xl font-bold mb-4">Цены на туры</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Выберите подходящий план для вашего проекта
+              Выберите продолжительность путешествия по Камчатке
             </p>
           </div>
 
@@ -207,7 +207,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                     size="lg"
                     onClick={() => scrollToSection('booking')}
                   >
-                    Выбрать план
+                    Забронировать
                   </Button>
                 </CardContent>
               </Card>
