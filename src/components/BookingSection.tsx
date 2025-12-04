@@ -166,11 +166,18 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
       <footer className="py-12 px-6 border-t border-border/50">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-2xl font-bold text-gradient">Agency</div>
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/7086dc46-7172-4474-866d-817ee153f15c.jpg" 
+                alt="Kamchatka Adventures Logo" 
+                className="w-10 h-10 rounded-lg"
+              />
+              <div className="text-2xl font-bold text-gradient">Kamchatka Adventures</div>
+            </div>
             
             <div className="flex gap-8 text-sm text-muted-foreground">
               <button onClick={() => scrollToSection('services')} className="hover:text-primary transition-colors">
-                Услуги
+                Туры
               </button>
               <button onClick={() => scrollToSection('pricing')} className="hover:text-primary transition-colors">
                 Цены
@@ -184,7 +191,7 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
             </div>
 
             <div className="text-sm text-muted-foreground">
-              © 2024 Agency. Все права защищены
+              © 2024 Kamchatka Adventures
             </div>
           </div>
         </div>
