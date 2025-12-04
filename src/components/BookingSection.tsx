@@ -159,8 +159,8 @@ export default function BookingSection({
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Email</div>
-                    <a href="mailto:hello@agency.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      hello@agency.com
+                    <a href="mailto:Ledukovadiana@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      Ledukovadiana@gmail.com
                     </a>
                   </div>
                 </div>
@@ -170,22 +170,27 @@ export default function BookingSection({
                     <Icon name="Phone" size={24} />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Телефон</div>
-                    <a href="tel:+79991234567" className="text-muted-foreground hover:text-primary transition-colors">
-                      +7 (999) 123-45-67
-                    </a>
+                    <div className="font-semibold mb-1">Телефоны</div>
+                    <div className="space-y-1">
+                      <a href="tel:+79992997447" className="text-muted-foreground hover:text-primary transition-colors block">
+                        +7 (999) 299-74-47 — Диана
+                      </a>
+                      <a href="tel:+79246869595" className="text-muted-foreground hover:text-primary transition-colors block">
+                        +7 (924) 686-95-95 — Антон
+                      </a>
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
-                    <Icon name="MapPin" size={24} />
+                    <Icon name="Building2" size={24} />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Офис</div>
+                    <div className="font-semibold mb-1">Реквизиты</div>
                     <p className="text-muted-foreground">
-                      Москва, ул. Примерная, д. 1<br />
-                      БЦ "Современный"
+                      ИП Ледюкова Д.Е.<br />
+                      ИНН 410124236711
                     </p>
                   </div>
                 </div>
