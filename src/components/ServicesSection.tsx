@@ -10,7 +10,8 @@ const services = [
     title: 'Джип-туры по Камчатке',
     description: 'Экстремальные поездки на внедорожниках к действующим вулканам и горным массивам',
     features: ['Вулканы Мутновский и Горелый', 'Массив Вачкажец', 'Профессиональные гиды'],
-    detailedDescription: 'Джип-туры по Камчатке включают в себя более 20-ти маршрутов, чтобы показать вам настоящую Камчатку — дикую, мощную и доступную на внедорожнике. Выберите свой уровень драйва: от фото-сафари до настоящей экспедиции.'
+    detailedDescription: 'Джип-туры по Камчатке включают в себя более 20-ти маршрутов, чтобы показать вам настоящую Камчатку — дикую, мощную и доступную на внедорожнике. Выберите свой уровень драйва: от фото-сафари до настоящей экспедиции.',
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/625d036d-31ef-4fcc-80f3-1714534205e7.jpg'
   },
   {
     icon: 'Fish',
@@ -27,14 +28,16 @@ const services = [
 • Голец (июль-сентябрь)
 
 После рыбалки Вас ждёт:
-Приготовленная уха по традиционному рецепту прямо на берегу из свежего улова.`
+Приготовленная уха по традиционному рецепту прямо на берегу из свежего улова.`,
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/9f93f620-976e-4bb3-951e-3dac3aff1cc4.jpg'
   },
   {
     icon: 'Shell',
     title: 'Крабовое сафари',
     description: 'Морская прогулка по Авачинской бухте с ловлей и дегустацией камчатского краба',
     features: ['Ловля краба', 'Приготовление на месте', 'Экскурсия по бухте'],
-    detailedDescription: `Морское приключение в Авачинской бухте с ловлей настоящего камчатского краба. Опытный капитан покажет лучшие места, вы сами поднимете ловушки и увидите живых крабов. После улова — дегустация свежеприготовленного краба прямо на борту катера с видом на Авачинскую сопку и бухту Три Брата.`
+    detailedDescription: `Морское приключение в Авачинской бухте с ловлей настоящего камчатского краба. Опытный капитан покажет лучшие места, вы сами поднимете ловушки и увидите живых крабов. После улова — дегустация свежеприготовленного краба прямо на борту катера с видом на Авачинскую сопку и бухту Три Брата.`,
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/13c02d80-6734-423b-9b28-ab56ad5e8bfc.jpg'
   },
   {
     icon: 'Mountain',
@@ -48,21 +51,24 @@ const services = [
 • Прогулки по застывшим лавовым полям извержения 2012-2013 годов
 • Фотографии марсианских пейзажей
 
-Включено: палатки, спальники, питание, трансфер, гид.`
+Включено: палатки, спальники, питание, трансфер, гид.`,
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/c58e4d86-628f-4a2d-a690-0249bb8d1dba.jpg'
   },
   {
     icon: 'Compass',
     title: 'Горный массив Вачкажец',
     description: 'Треккинг по живописным горным тропам с видами на вулканы и долины',
     features: ['Пешие маршруты', 'Горные озёра', 'Обед на природе'],
-    detailedDescription: `Горный массив Вачкажец — идеальное место для треккинга с панорамными видами на вулканы Авачинской группы. Маршрут проходит через альпийские луга, каменные россыпи и горные озёра с кристально чистой водой. Подходит для туристов с базовой физической подготовкой. Обед готовится на костре среди гор.`
+    detailedDescription: `Горный массив Вачкажец — идеальное место для треккинга с панорамными видами на вулканы Авачинской группы. Маршрут проходит через альпийские луга, каменные россыпи и горные озёра с кристально чистой водой. Подходит для туристов с базовой физической подготовкой. Обед готовится на костре среди гор.`,
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/13bd90c8-8150-46ad-b07a-fb1765518e23.jpg'
   },
   {
     icon: 'Sunrise',
     title: 'Рассвет на Халактырском пляже',
     description: 'Утренняя экскурсия на знаменитый чёрный пляж с вулканическим песком',
     features: ['Встреча рассвета', 'Фотосессия', 'Горячий чай и завтрак'],
-    detailedDescription: `Встречайте рассвет на легендарном Халактырском пляже с чёрным вулканическим песком. Ранний выезд к океану, первые лучи солнца над Тихим океаном, фотосессия с видом на вулканы Корякский и Авачинский. После — горячий чай и завтрак с камчатскими деликатесами прямо на берегу. Идеально для романтиков и фотографов.`
+    detailedDescription: `Встречайте рассвет на легендарном Халактырском пляже с чёрным вулканическим песком. Ранний выезд к океану, первые лучи солнца над Тихим океаном, фотосессия с видом на вулканы Корякский и Авачинский. После — горячий чай и завтрак с камчатскими деликатесами прямо на берегу. Идеально для романтиков и фотографов.`,
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/81972784-656d-41d0-8c6d-837c37f061a2.jpg'
   },
   {
     icon: 'Route',
@@ -161,13 +167,23 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
             {services.map((service, index) => (
               <Card 
                 key={index}
-                className="glass border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 cursor-pointer group animate-slide-up"
+                className="glass border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 cursor-pointer group animate-slide-up overflow-hidden"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <CardHeader>
-                  <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={service.icon} size={28} className="text-white" />
+                {service.image && (
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                    <div className="absolute bottom-4 left-4 w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center">
+                      <Icon name={service.icon} size={28} className="text-white" />
+                    </div>
                   </div>
+                )}
+                <CardHeader>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
                   <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardHeader>
@@ -185,7 +201,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                     <>
                       {expandedService === index && (
                         <div className="mt-4 p-4 bg-background/50 rounded-lg border border-border/30">
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
                             {service.detailedDescription}
                           </p>
                         </div>
