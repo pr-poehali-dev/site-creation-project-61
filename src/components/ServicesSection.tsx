@@ -89,25 +89,25 @@ const pricingPlans = [
 
 const blogPosts = [
   {
-    title: 'Тренды веб-дизайна 2024',
-    excerpt: 'Разбираем главные тенденции в дизайне интерфейсов и что будет актуально в следующем году',
-    date: '15 ноября 2024',
-    category: 'Дизайн',
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/ab825734-f45e-4973-ad6a-72cdb978434b.jpg'
+    title: 'Встреча с медведями Камчатки',
+    excerpt: 'Как безопасно наблюдать за бурыми медведями в их естественной среде обитания на реках полуострова',
+    date: '1 декабря 2024',
+    category: 'Дикая природа',
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/073ae185-39c5-4651-ae14-779faceee2c3.jpg'
   },
   {
-    title: 'Как выбрать правильную стратегию',
-    excerpt: 'Пошаговое руководство по выбору бизнес-стратегии для digital продуктов',
-    date: '10 ноября 2024',
-    category: 'Стратегия',
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/b5e08a7c-ade9-4157-bc70-62f97ccb1388.jpg'
+    title: 'Вулканы Камчатки: путеводитель',
+    excerpt: 'Самые впечатляющие действующие вулканы полуострова и лучшие маршруты для их посещения',
+    date: '25 ноября 2024',
+    category: 'Маршруты',
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/5f645cdf-66a6-415b-b7f2-852573c8a03d.jpg'
   },
   {
-    title: 'Кейс: Рост конверсии на 300%',
-    excerpt: 'История успеха клиента — как мы увеличили конверсию интернет-магазина в три раза',
-    date: '5 ноября 2024',
-    category: 'Кейсы',
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/3aae8e3a-90d3-48e4-85b6-240db4ef87a7.jpg'
+    title: 'Долина гейзеров: чудо природы',
+    excerpt: 'Уникальная экосистема Долины гейзеров — одно из крупнейших гейзерных полей в мире',
+    date: '20 ноября 2024',
+    category: 'Природа',
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/2e9cf7e7-213c-44f8-82e8-5e4765d041d7.jpg'
   }
 ];
 
@@ -222,9 +222,9 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
             <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">
               Полезные материалы
             </Badge>
-            <h2 className="text-5xl font-bold mb-4">Блог</h2>
+            <h2 className="text-5xl font-bold mb-4">Блог о Камчатке</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Делимся опытом и экспертизой в digital
+              Делимся знаниями о природе и путешествиях по полуострову
             </p>
           </div>
 
