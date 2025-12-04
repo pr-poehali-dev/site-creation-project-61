@@ -51,43 +51,37 @@ const services = [
 const pricingPlans = [
   {
     name: 'Однодневный',
-    price: '8 500',
+    price: 'от 10 000',
     period: '1 день',
     description: 'Идеально для знакомства',
     features: [
-      'Один тур на выбор',
-      'Трансфер включён',
-      'Профессиональный гид',
-      'Обед на природе'
+      'Трансфер',
+      'Гид',
+      'Питание'
     ],
     highlighted: false
   },
   {
     name: 'Приключение',
-    price: '35 000',
+    price: 'от 35 000',
     period: '3 дня',
     description: 'Погружение в природу Камчатки',
     features: [
       '3 тура из программы',
-      'Проживание в отеле',
-      'Все трансферы',
-      'Питание (завтрак + обед)',
-      'Фотосессия в подарок'
+      'Трансфер',
+      'Питание'
     ],
     highlighted: true
   },
   {
     name: 'Полное погружение',
-    price: '75 000',
+    price: 'от 75 000',
     period: '7 дней',
     description: 'Максимальный опыт',
     features: [
-      'Все туры программы',
-      'Комфортное проживание',
-      'Полный пансион',
-      'Личный гид-сопровождающий',
-      'Трансфер из/в аэропорт',
-      'Сувениры в подарок'
+      'Подбор тура',
+      'Гид',
+      'Трансфер'
     ],
     highlighted: false
   }
@@ -194,7 +188,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                   <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
                   <div className="mb-2">
                     <span className="text-5xl font-bold text-gradient">{plan.price}</span>
-                    {plan.price !== 'Индивидуально' && <span className="text-muted-foreground"> ₽</span>}
+                    <span className="text-muted-foreground"> ₽/чел</span>
                   </div>
                   <CardDescription className="text-base">{plan.description}</CardDescription>
                 </CardHeader>
