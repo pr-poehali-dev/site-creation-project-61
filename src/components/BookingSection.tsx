@@ -2,134 +2,68 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Calendar } from '@/components/ui/calendar';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
-const timeSlots = [
-  '09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00'
-];
-
 interface BookingSectionProps {
-  selectedDate: Date | undefined;
-  setSelectedDate: (date: Date | undefined) => void;
-  selectedTime: string;
-  setSelectedTime: (time: string) => void;
   scrollToSection: (sectionId: string) => void;
 }
 
-export default function BookingSection({
-  selectedDate,
-  setSelectedDate,
-  selectedTime,
-  setSelectedTime,
-  scrollToSection
-}: BookingSectionProps) {
+export default function BookingSection({ scrollToSection }: BookingSectionProps) {
   return (
     <>
       <section id="booking" className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16 animate-fade-in">
             <Badge className="bg-accent/10 text-accent border-accent/20 mb-4">
-              Начнём работу
+              Забронируйте тур
             </Badge>
-            <h2 className="text-5xl font-bold mb-4">Бронирование консультации</h2>
+            <h2 className="text-5xl font-bold mb-4">Бронирование тура</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Выберите удобное время для обсуждения вашего проекта
+              Оставьте заявку и мы свяжемся с вами для уточнения деталей
             </p>
           </div>
 
           <Card className="glass border-primary/30">
             <CardContent className="p-8">
-              <Tabs defaultValue="calendar" className="space-y-8">
-                <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
-                  <TabsTrigger value="calendar">Выбор даты и времени</TabsTrigger>
-                  <TabsTrigger value="info">Информация</TabsTrigger>
-                </TabsList>
-
-                <TabsContent value="calendar" className="space-y-8">
-                  <div className="grid lg:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4">Выберите дату</h3>
-                      <Calendar
-                        mode="single"
-                        selected={selectedDate}
-                        onSelect={setSelectedDate}
-                        className="rounded-lg border glass p-4"
-                        disabled={(date) => date < new Date()}
-                      />
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4">Доступное время</h3>
-                      <div className="grid grid-cols-3 gap-3">
-                        {timeSlots.map((time) => (
-                          <Button
-                            key={time}
-                            variant={selectedTime === time ? 'default' : 'outline'}
-                            className={selectedTime === time ? 'gradient-primary' : ''}
-                            onClick={() => setSelectedTime(time)}
-                          >
-                            {time}
-                          </Button>
-                        ))}
-                      </div>
-
-                      {selectedDate && selectedTime && (
-                        <div className="mt-8 p-4 rounded-lg glass border-primary/30">
-                          <div className="flex items-center gap-2 text-primary mb-2">
-                            <Icon name="CheckCircle" size={20} />
-                            <span className="font-semibold">Выбрано:</span>
-                          </div>
-                          <p className="text-muted-foreground">
-                            {selectedDate.toLocaleDateString('ru-RU', { 
-                              day: 'numeric', 
-                              month: 'long', 
-                              year: 'numeric' 
-                            })} в {selectedTime}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </TabsContent>
-
-                <TabsContent value="info" className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Имя</label>
-                      <Input placeholder="Ваше имя" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Email</label>
-                      <Input type="email" placeholder="email@example.com" />
-                    </div>
-                  </div>
-
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Телефон</label>
-                    <Input type="tel" placeholder="+7 (___) ___-__-__" />
+                    <label className="text-sm font-medium">Имя</label>
+                    <Input placeholder="Ваше имя" />
                   </div>
-
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Расскажите о проекте</label>
-                    <Textarea 
-                      placeholder="Опишите вашу задачу или проект..."
-                      rows={6}
-                    />
+                    <label className="text-sm font-medium">Email</label>
+                    <Input type="email" placeholder="email@example.com" />
                   </div>
+                </div>
 
-                  <Button 
-                    size="lg" 
-                    className="w-full gradient-primary text-lg"
-                    disabled={!selectedDate || !selectedTime}
-                  >
-                    Забронировать консультацию
-                    <Icon name="Calendar" className="ml-2" size={20} />
-                  </Button>
-                </TabsContent>
-              </Tabs>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Телефон</label>
+                  <Input type="tel" placeholder="+7 (___) ___-__-__" />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Выберите тур</label>
+                  <Input placeholder="Например: Джип-тур, Рыбалка, Толбачик..." />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Дополнительная информация</label>
+                  <Textarea 
+                    placeholder="Желаемые даты, количество человек, особые пожелания..."
+                    rows={6}
+                  />
+                </div>
+
+                <Button 
+                  size="lg" 
+                  className="w-full gradient-primary text-lg"
+                >
+                  Отправить заявку
+                  <Icon name="Send" className="ml-2" size={20} />
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </div>

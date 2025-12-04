@@ -5,8 +5,6 @@ import ServicesSection from '@/components/ServicesSection';
 import BookingSection from '@/components/BookingSection';
 
 export default function Index() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
-  const [selectedTime, setSelectedTime] = useState<string>('');
   const [activeSection, setActiveSection] = useState('home');
 
   const scrollToSection = (sectionId: string) => {
@@ -19,13 +17,7 @@ export default function Index() {
       <Header activeSection={activeSection} scrollToSection={scrollToSection} />
       <HeroSection scrollToSection={scrollToSection} />
       <ServicesSection scrollToSection={scrollToSection} />
-      <BookingSection
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-        selectedTime={selectedTime}
-        setSelectedTime={setSelectedTime}
-        scrollToSection={scrollToSection}
-      />
+      <BookingSection scrollToSection={scrollToSection} />
     </div>
   );
 }
