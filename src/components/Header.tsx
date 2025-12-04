@@ -9,7 +9,7 @@ export default function Header({ activeSection, scrollToSection }: HeaderProps) 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="text-2xl font-bold text-gradient">Agency</div>
+        <div className="text-2xl font-bold text-gradient">Kamchatka Adventures</div>
         
         <div className="hidden md:flex items-center gap-8">
           <button
@@ -22,7 +22,7 @@ export default function Header({ activeSection, scrollToSection }: HeaderProps) 
             onClick={() => scrollToSection('services')}
             className={`transition-colors hover:text-primary ${activeSection === 'services' ? 'text-primary' : 'text-muted-foreground'}`}
           >
-            Услуги
+            Туры
           </button>
           <button
             onClick={() => scrollToSection('pricing')}
@@ -51,7 +51,7 @@ export default function Header({ activeSection, scrollToSection }: HeaderProps) 
         </div>
 
         <Button className="gradient-primary">
-          Связаться
+          Забронировать тур
         </Button>
       </nav>
     </header>
