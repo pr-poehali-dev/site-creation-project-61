@@ -190,8 +190,30 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
               </button>
             </div>
 
-            <div className="text-sm text-muted-foreground">
-              © 2024 Kamchatka Adventures
+            <div className="flex flex-col items-center md:items-end gap-3">
+              <div className="flex gap-4">
+                <a 
+                  href="https://instagram.com/kamchatka_adventures41" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Icon name="Instagram" size={20} />
+                </a>
+                <a 
+                  href="https://t.me/Diana_LK41" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Telegram"
+                >
+                  <Icon name="Send" size={20} />
+                </a>
+              </div>
+              <div className="text-sm text-muted-foreground">
+                © 2024 Kamchatka Adventures
+              </div>
             </div>
           </div>
         </div>
