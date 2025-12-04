@@ -47,8 +47,8 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
                 <div className="text-muted-foreground">Маршрутов</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-gradient">10</div>
-                <div className="text-muted-foreground">Лет опыта</div>
+                <div className="text-4xl font-bold text-gradient">7</div>
+                <div className="text-muted-foreground">Авто в парке</div>
               </div>
             </div>
           </div>
