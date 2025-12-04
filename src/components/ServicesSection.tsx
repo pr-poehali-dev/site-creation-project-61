@@ -103,11 +103,11 @@ const blogPosts = [
     image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/5f645cdf-66a6-415b-b7f2-852573c8a03d.jpg'
   },
   {
-    title: 'Долина гейзеров: чудо природы',
-    excerpt: 'Уникальная экосистема Долины гейзеров — одно из крупнейших гейзерных полей в мире',
+    title: '4 дня на Толбачике: приключение',
+    excerpt: 'Путешествие к легендарному вулкану с палаточными ночёвками среди марсианских лавовых полей',
     date: '20 ноября 2024',
-    category: 'Природа',
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/2e9cf7e7-213c-44f8-82e8-5e4765d041d7.jpg'
+    category: 'Туры',
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/18fbaef4-0981-4fc5-93bc-4749bcb9e4b4.jpg'
   }
 ];
 
