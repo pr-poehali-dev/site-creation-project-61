@@ -8,8 +8,22 @@ interface HeroSectionProps {
 
 export default function HeroSection({ scrollToSection }: HeroSectionProps) {
   return (
-    <section id="home" className="pt-32 pb-20 px-6">
-      <div className="container mx-auto">
+    <section id="home" className="relative pt-32 pb-20 px-6 overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-20"
+        >
+          <source src="https://www.kamchatka.ru/media/video/kamchatka-promo.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
+      </div>
+
+      <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
             <Badge className="bg-primary/10 text-primary border-primary/20">
