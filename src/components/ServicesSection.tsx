@@ -120,6 +120,7 @@ const blogPosts = [
   {
     title: 'Встреча с медведями Камчатки',
     excerpt: 'Как безопасно наблюдать за бурыми медведями в их естественной среде обитания на реках полуострова',
+    fullText: `Камчатка — один из немногих регионов планеты, где можно увидеть бурых медведей в дикой природе. Каждое лето сотни медведей собираются на реках полуострова во время нереста лосося.\n\nПравила безопасности:\n• Всегда оставайтесь с гидом\n• Соблюдайте дистанцию минимум 100 метров\n• Не приближайтесь к медведицам с медвежатами\n• Не создавайте резких звуков и движений\n\nЛучшее время для наблюдения — июль-сентябрь, когда идет активный нерест. Самые популярные места: Курильское озеро, реки Жупанова и Озерная.`,
     date: '1 декабря 2024',
     category: 'Дикая природа',
     image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/073ae185-39c5-4651-ae14-779faceee2c3.jpg'
@@ -127,6 +128,7 @@ const blogPosts = [
   {
     title: 'Вулканы Камчатки: путеводитель',
     excerpt: 'Самые впечатляющие действующие вулканы полуострова и лучшие маршруты для их посещения',
+    fullText: `На Камчатке находится 29 действующих вулканов из 68 объектов Всемирного наследия ЮНЕСКО "Вулканы Камчатки". Это одна из крупнейших вулканических областей мира.\n\nТоп-5 вулканов для посещения:\n\n1. Авачинский (2741м) — самый доступный действующий вулкан, восхождение за 1 день\n2. Мутновский — активный вулкан с кипящими грязевыми котлами и фумаролами\n3. Горелый — кратер диаметром 800м с ярко-бирюзовым кислотным озером\n4. Толбачик — марсианские пейзажи застывшей лавы после извержения 2012-2013 годов\n5. Ключевская сопка (4750м) — высочайший действующий вулкан Евразии\n\nВажно: все восхождения — только с опытным гидом и соответствующей физической подготовкой.`,
     date: '25 ноября 2024',
     category: 'Маршруты',
     image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/5f645cdf-66a6-415b-b7f2-852573c8a03d.jpg'
@@ -134,6 +136,7 @@ const blogPosts = [
   {
     title: '4 дня на Толбачике: приключение',
     excerpt: 'Путешествие к легендарному вулкану с палаточными ночёвками среди марсианских лавовых полей',
+    fullText: `Толбачик — это не просто вулкан, это другая планета на Земле. После извержения 2012-2013 годов здесь образовались километры застывшей лавы, создав фантастические марсианские пейзажи.\n\nЧто включает тур:\n\nДень 1: Выезд из Петропавловска-Камчатского, 6-7 часов по бездорожью. Установка базового лагеря у подножия вулкана.\n\nДень 2: Восхождение на плато Толбачик (3085м). Панорамные виды на Ключевскую группу вулканов. Прогулка по лавовым полям.\n\nДень 3: Исследование "Мертвого леса" — территории, погребенной под слоем пепла. Посещение лавовых пещер и трещин.\n\nДень 4: Возвращение в город с остановками для фотосессий.\n\nВажно взять: теплую одежду (ночью до +5°C даже летом), трекинговые ботинки, солнцезащитные очки и крем.`,
     date: '20 ноября 2024',
     category: 'Туры',
     image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/18fbaef4-0981-4fc5-93bc-4749bcb9e4b4.jpg'
@@ -146,6 +149,7 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({ scrollToSection }: ServicesSectionProps) {
   const [expandedService, setExpandedService] = useState<number | null>(null);
+  const [expandedBlogPost, setExpandedBlogPost] = useState<number | null>(null);
 
   return (
     <>
@@ -303,7 +307,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
             {blogPosts.map((post, index) => (
               <Card 
                 key={index}
-                className="glass border-border/50 hover:border-primary/50 overflow-hidden group cursor-pointer transition-all duration-300 hover:scale-105 animate-slide-up"
+                className="glass border-border/50 hover:border-primary/50 overflow-hidden group transition-all duration-300 animate-slide-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="relative h-48 overflow-hidden">
@@ -324,12 +328,18 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                   <CardTitle className="text-xl group-hover:text-primary transition-colors">
                     {post.title}
                   </CardTitle>
-                  <CardDescription>{post.excerpt}</CardDescription>
+                  <CardDescription>
+                    {expandedBlogPost === index ? post.fullText : post.excerpt}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="ghost" className="group-hover:text-primary">
-                    Читать далее
-                    <Icon name="ArrowRight" className="ml-2" size={16} />
+                  <Button 
+                    variant="ghost" 
+                    className="group-hover:text-primary"
+                    onClick={() => setExpandedBlogPost(expandedBlogPost === index ? null : index)}
+                  >
+                    {expandedBlogPost === index ? 'Скрыть' : 'Читать далее'}
+                    <Icon name={expandedBlogPost === index ? 'ChevronUp' : 'ArrowRight'} className="ml-2" size={16} />
                   </Button>
                 </CardContent>
               </Card>
