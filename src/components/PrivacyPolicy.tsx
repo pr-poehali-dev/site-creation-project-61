@@ -109,6 +109,7 @@ export default function PrivacyPolicy() {
               <ul className="list-none space-y-2 ml-4 mt-2">
                 <li>Email: Ledukovadiana@gmail.com</li>
                 <li>Телефон: +7 (999) 299-74-47</li>
+                <li>ОГРНИП: 324510000018892</li>
               </ul>
             </section>
 
