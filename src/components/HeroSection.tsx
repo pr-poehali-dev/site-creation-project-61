@@ -16,11 +16,12 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-30"
         >
-          <source src="https://www.kamchatka.ru/media/video/kamchatka-promo.mp4" type="video/mp4" />
+          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=ef0e8b5ef7c6c0f5f6c5f3f1f3b1f8b8f1f3f1f3&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+          <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/70 to-background"></div>
       </div>
 
       <div className="container mx-auto relative z-10">
