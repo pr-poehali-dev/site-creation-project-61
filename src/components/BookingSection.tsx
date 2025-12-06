@@ -3,7 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
 import Icon from '@/components/ui/icon';
+import { Link } from 'react-router-dom';
 
 interface BookingSectionProps {
   scrollToSection: (sectionId: string) => void;
@@ -54,6 +56,16 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
                     placeholder="Желаемые даты, количество человек, особые пожелания..."
                     rows={6}
                   />
+                </div>
+
+                <div className="flex items-start space-x-3 p-4 bg-accent/5 rounded-lg border border-border/30">
+                  <Checkbox id="privacy" className="mt-1" />
+                  <label htmlFor="privacy" className="text-sm leading-relaxed cursor-pointer">
+                    Я согласен(на) на обработку персональных данных в соответствии с{' '}
+                    <Link to="/privacy" className="text-primary hover:underline">
+                      Политикой конфиденциальности
+                    </Link>
+                  </label>
                 </div>
 
                 <Button 
@@ -188,6 +200,9 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
               <button onClick={() => scrollToSection('contacts')} className="hover:text-primary transition-colors">
                 Контакты
               </button>
+              <Link to="/privacy" className="hover:text-primary transition-colors">
+                Политика конфиденциальности
+              </Link>
             </div>
 
             <div className="flex flex-col items-center md:items-end gap-3">
