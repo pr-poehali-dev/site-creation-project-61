@@ -136,7 +136,8 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
                     <div className="font-semibold mb-1">Реквизиты</div>
                     <p className="text-muted-foreground">
                       ИП Ледюкова Д.Е.<br />
-                      ИНН 410124236711
+                      ИНН 410124236711<br />
+                      ОГРНИП 324510000018892
                     </p>
                   </div>
                 </div>
