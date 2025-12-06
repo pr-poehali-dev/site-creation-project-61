@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-semibold mb-3">1. Общие положения</h2>
               <p className="leading-relaxed">
                 Настоящая Политика конфиденциальности персональных данных (далее — Политика) действует в отношении всей информации, 
-                которую сайт Камчатка Тур, расположенный на доменном имени kamchatka-tour.ru, может получить о Пользователе 
+                которую сайт Камчатка Тур, расположенный на доменном имени kamchatka-adventures41.ru, может получить о Пользователе 
                 во время использования сайта, программ и продуктов сайта.
               </p>
             </section>
@@ -107,8 +107,8 @@ export default function PrivacyPolicy() {
                 По всем вопросам, связанным с обработкой персональных данных, вы можете обратиться к нам:
               </p>
               <ul className="list-none space-y-2 ml-4 mt-2">
-                <li>Email: info@kamchatka-tour.ru</li>
-                <li>Телефон: +7 (123) 456-78-90</li>
+                <li>Email: Ledukovadiana@gmail.com</li>
+                <li>Телефон: +7 (999) 299-74-47</li>
               </ul>
             </section>
 
