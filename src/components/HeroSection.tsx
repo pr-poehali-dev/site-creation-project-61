@@ -9,18 +9,13 @@ interface HeroSectionProps {
 export default function HeroSection({ scrollToSection }: HeroSectionProps) {
   return (
     <section id="home" className="relative pt-32 pb-20 px-6 overflow-hidden">
-      {/* Video Background */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-30"
-        >
-          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=ef0e8b5ef7c6c0f5f6c5f3f1f3b1f8b8f1f3f1f3&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
-          <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
-        </video>
+        <img
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
+          alt="Kamchatka Landscape"
+          className="w-full h-full object-cover opacity-25"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/70 to-background"></div>
       </div>
 
