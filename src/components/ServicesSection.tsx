@@ -87,7 +87,7 @@ const services = [
 • Бухту Тихая и живописные скалистые берега
 
 Легкий маршрут, подходит для всех возрастов. Идеально для фотосессий и знакомства с красотами побережья Камчатки.`,
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070',
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/68217797-d707-4d56-a9d7-d576b7168794.jpg',
     difficulty: 'легкий'
   },
   {
