@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import Icon from '@/components/ui/icon';
+import { useState } from 'react';
 
 interface HeaderProps {
   activeSection: string;
@@ -6,6 +8,13 @@ interface HeaderProps {
 }
 
 export default function Header({ activeSection, scrollToSection }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleNavClick = (sectionId: string) => {
+    scrollToSection(sectionId);
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
@@ -57,10 +66,67 @@ export default function Header({ activeSection, scrollToSection }: HeaderProps) 
           </button>
         </div>
 
-        <Button className="gradient-primary">
-          Забронировать тур
-        </Button>
+        <div className="flex items-center gap-4">
+          <Button className="hidden md:flex gradient-primary" onClick={() => scrollToSection('booking')}>
+            Забронировать тур
+          </Button>
+          
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <Icon name={mobileMenuOpen ? 'X' : 'Menu'} size={24} />
+          </Button>
+        </div>
       </nav>
+
+      {mobileMenuOpen && (
+        <div className="md:hidden glass border-t border-border/50 animate-fade-in">
+          <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
+            <button
+              onClick={() => handleNavClick('home')}
+              className={`text-left py-2 transition-colors hover:text-primary ${activeSection === 'home' ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
+            >
+              🏠 Главная
+            </button>
+            <button
+              onClick={() => handleNavClick('services')}
+              className={`text-left py-2 transition-colors hover:text-primary ${activeSection === 'services' ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
+            >
+              🏔️ Туры
+            </button>
+            <button
+              onClick={() => handleNavClick('pricing')}
+              className={`text-left py-2 transition-colors hover:text-primary ${activeSection === 'pricing' ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
+            >
+              💰 Цены
+            </button>
+            <button
+              onClick={() => handleNavClick('blog')}
+              className={`text-left py-2 transition-colors hover:text-primary ${activeSection === 'blog' ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
+            >
+              📖 Блог
+            </button>
+            <button
+              onClick={() => handleNavClick('booking')}
+              className={`text-left py-2 transition-colors hover:text-primary ${activeSection === 'booking' ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
+            >
+              📅 Бронирование
+            </button>
+            <button
+              onClick={() => handleNavClick('contacts')}
+              className={`text-left py-2 transition-colors hover:text-primary ${activeSection === 'contacts' ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
+            >
+              📞 Контакты
+            </button>
+            <Button className="gradient-primary w-full mt-2" onClick={() => handleNavClick('booking')}>
+              Забронировать тур
+            </Button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
