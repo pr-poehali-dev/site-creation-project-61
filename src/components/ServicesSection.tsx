@@ -11,7 +11,8 @@ const services = [
     description: 'Экстремальные поездки на внедорожниках к действующим вулканам и горным массивам',
     features: ['Вулканы Мутновский и Горелый', 'Массив Вачкажец', 'Профессиональные гиды'],
     detailedDescription: 'Джип-туры по Камчатке включают в себя более 20-ти маршрутов, чтобы показать вам настоящую Камчатку — дикую, мощную и доступную на внедорожнике. Выберите свой уровень драйва: от фото-сафари до настоящей экспедиции.',
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/625d036d-31ef-4fcc-80f3-1714534205e7.jpg'
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/625d036d-31ef-4fcc-80f3-1714534205e7.jpg',
+    difficulty: 'средний'
   },
   {
     icon: 'Fish',
@@ -29,7 +30,8 @@ const services = [
 
 После рыбалки Вас ждёт:
 Приготовленная уха по традиционному рецепту прямо на берегу из свежего улова.`,
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/9f93f620-976e-4bb3-951e-3dac3aff1cc4.jpg'
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/9f93f620-976e-4bb3-951e-3dac3aff1cc4.jpg',
+    difficulty: 'легкий'
   },
   {
     icon: 'Shell',
@@ -37,7 +39,8 @@ const services = [
     description: 'Морская прогулка по Авачинской бухте с ловлей и дегустацией камчатского краба',
     features: ['Ловля краба', 'Приготовление на месте', 'Экскурсия по бухте'],
     detailedDescription: `Морское приключение в Авачинской бухте с ловлей настоящего Камчатского краба. Опытный гид покажет лучшие места, вы сами поднимете ловушки, увидите живых крабов, сделаете красивое фото на память. После улова вас ожидает - дегустация свежеприготовленного краба на берегу с черным песком и видом на Авачинскую бухту.`,
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/13c02d80-6734-423b-9b28-ab56ad5e8bfc.jpg'
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/13c02d80-6734-423b-9b28-ab56ad5e8bfc.jpg',
+    difficulty: 'легкий'
   },
   {
     icon: 'Mountain',
@@ -50,7 +53,8 @@ const services = [
 • Прогулка по Марсовым полям
 
 Включено: трансфер, гид-водитель, установка лагеря.`,
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/c58e4d86-628f-4a2d-a690-0249bb8d1dba.jpg'
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/c58e4d86-628f-4a2d-a690-0249bb8d1dba.jpg',
+    difficulty: 'сложный'
   },
   {
     icon: 'Compass',
@@ -58,7 +62,8 @@ const services = [
     description: 'Треккинг по живописным горным тропам с видами на вулканы и долины',
     features: ['Пешие маршруты', 'Горные озёра', 'Обед на природе'],
     detailedDescription: `Горный массив Вачкажец – идеальное место для трекинга с панорамными видами на два ледниковых цирка где сохраняется многолетний снег и лед. Маршрут проходит через каменные россыпи, горные озера и водопад с кристально чистой водой. Подходит для туристов с базовой физической подготовкой.`,
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/13bd90c8-8150-46ad-b07a-fb1765518e23.jpg'
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/13bd90c8-8150-46ad-b07a-fb1765518e23.jpg',
+    difficulty: 'средний'
   },
   {
     icon: 'Sunrise',
@@ -66,14 +71,16 @@ const services = [
     description: 'Утренняя экскурсия на знаменитый чёрный пляж с вулканическим песком',
     features: ['Встреча рассвета', 'Фотосессия', 'Горячий чай и завтрак'],
     detailedDescription: `Встречайте рассвет на легендарном Халактырском пляже с черным вулканическим песком, ранний выезд к океану, первые лучи солнца над Тихим океаном, фотосессия на вулканы Корякский и Авачинский, после горячий завтрак прямо на берегу, идеально для романтиков и фотографов.`,
-    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/81972784-656d-41d0-8c6d-837c37f061a2.jpg'
+    image: 'https://cdn.poehali.dev/projects/4907d0d1-6aad-4fca-a3c7-26424ad91843/files/81972784-656d-41d0-8c6d-837c37f061a2.jpg',
+    difficulty: 'легкий'
   },
   {
     icon: 'Route',
     title: 'Подбор маршрута по Вашим пожеланиям',
     description: 'Создадим индивидуальную программу путешествия с учётом ваших интересов и возможностей',
     features: ['Персональный маршрут', 'Гибкий график', 'Экспертная консультация'],
-    detailedDescription: `Каждое путешествие уникально. Мы создадим персональный маршрут с учётом ваших интересов, физической подготовки, бюджета и времени. Хотите совместить вулканы с рыбалкой? Или предпочитаете спокойные экскурсии к термальным источникам? Расскажите о своих мечтах — мы воплотим их в реальность на Камчатке.`
+    detailedDescription: `Каждое путешествие уникально. Мы создадим персональный маршрут с учётом ваших интересов, физической подготовки, бюджета и времени. Хотите совместить вулканы с рыбалкой? Или предпочитаете спокойные экскурсии к термальным источникам? Расскажите о своих мечтах — мы воплотим их в реальность на Камчатке.`,
+    difficulty: 'средний'
   }
 ];
 
@@ -158,6 +165,11 @@ interface ServicesSectionProps {
 export default function ServicesSection({ scrollToSection }: ServicesSectionProps) {
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const [expandedBlogPost, setExpandedBlogPost] = useState<number | null>(null);
+  const [difficultyFilter, setDifficultyFilter] = useState<string>('все');
+
+  const filteredServices = difficultyFilter === 'все' 
+    ? services 
+    : services.filter(s => s.difficulty === difficultyFilter);
 
   return (
     <>
@@ -173,8 +185,42 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
             </p>
           </div>
 
+          <div className="flex justify-center gap-4 mb-12 flex-wrap">
+            <Button
+              variant={difficultyFilter === 'все' ? 'default' : 'outline'}
+              className={difficultyFilter === 'все' ? 'gradient-primary' : ''}
+              onClick={() => setDifficultyFilter('все')}
+            >
+              Все туры
+            </Button>
+            <Button
+              variant={difficultyFilter === 'легкий' ? 'default' : 'outline'}
+              className={difficultyFilter === 'легкий' ? 'gradient-primary' : ''}
+              onClick={() => setDifficultyFilter('легкий')}
+            >
+              <Icon name="Smile" className="mr-2" size={18} />
+              Легкие
+            </Button>
+            <Button
+              variant={difficultyFilter === 'средний' ? 'default' : 'outline'}
+              className={difficultyFilter === 'средний' ? 'gradient-primary' : ''}
+              onClick={() => setDifficultyFilter('средний')}
+            >
+              <Icon name="TrendingUp" className="mr-2" size={18} />
+              Средние
+            </Button>
+            <Button
+              variant={difficultyFilter === 'сложный' ? 'default' : 'outline'}
+              className={difficultyFilter === 'сложный' ? 'gradient-primary' : ''}
+              onClick={() => setDifficultyFilter('сложный')}
+            >
+              <Icon name="Mountain" className="mr-2" size={18} />
+              Сложные
+            </Button>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
+            {filteredServices.map((service, index) => (
               <Card 
                 key={index}
                 className="glass border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 cursor-pointer group animate-slide-up overflow-hidden"
@@ -188,6 +234,13 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-background/90 backdrop-blur-sm">
+                        {service.difficulty === 'легкий' && '🟢 Легкий'}
+                        {service.difficulty === 'средний' && '🟡 Средний'}
+                        {service.difficulty === 'сложный' && '🔴 Сложный'}
+                      </Badge>
+                    </div>
                     <div className="absolute bottom-4 left-4 w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center">
                       <Icon name={service.icon} size={28} className="text-white" />
                     </div>
