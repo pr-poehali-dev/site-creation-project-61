@@ -6,17 +6,23 @@ import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
 import Icon from '@/components/ui/icon';
 import { Link } from 'react-router-dom';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { AnimatedCard } from '@/components/AnimatedCard';
 
 interface BookingSectionProps {
   scrollToSection: (sectionId: string) => void;
 }
 
 export default function BookingSection({ scrollToSection }: BookingSectionProps) {
+  const bookingHeaderAnim = useScrollAnimation();
+  const bookingFormAnim = useScrollAnimation();
+  const contactsHeaderAnim = useScrollAnimation();
+  
   return (
     <>
       <section id="booking" className="py-20 px-6">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16 animate-fade-in">
+          <div ref={bookingHeaderAnim.ref} className={`text-center mb-16 scroll-fade-in ${bookingHeaderAnim.isVisible ? 'visible' : ''}`}>
             <Badge className="bg-accent/10 text-accent border-accent/20 mb-4">
               Забронируйте тур
             </Badge>
@@ -26,7 +32,8 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
             </p>
           </div>
 
-          <Card className="glass border-primary/30">
+          <AnimatedCard animation="scale-in">
+            <Card className="glass border-primary/30">
             <CardContent className="p-8">
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -78,12 +85,13 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
               </form>
             </CardContent>
           </Card>
+          </AnimatedCard>
         </div>
       </section>
 
       <section id="contacts" className="py-20 px-6 bg-card/30">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16 animate-fade-in">
+          <div ref={contactsHeaderAnim.ref} className={`text-center mb-16 scroll-fade-in ${contactsHeaderAnim.isVisible ? 'visible' : ''}`}>
             <Badge className="bg-secondary/10 text-secondary border-secondary/20 mb-4">
               Свяжитесь с нами
             </Badge>
@@ -94,7 +102,8 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="glass border-border/50">
+            <AnimatedCard animation="fade-in-left">
+              <Card className="glass border-border/50">
               <CardHeader>
                 <CardTitle>Контактная информация</CardTitle>
               </CardHeader>
@@ -155,8 +164,10 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
                 </div>
               </CardContent>
             </Card>
+            </AnimatedCard>
 
-            <Card className="glass border-border/50">
+            <AnimatedCard animation="fade-in-right">
+              <Card className="glass border-border/50">
               <CardHeader>
                 <CardTitle>Быстрая форма связи</CardTitle>
               </CardHeader>
@@ -172,6 +183,7 @@ export default function BookingSection({ scrollToSection }: BookingSectionProps)
                 </form>
               </CardContent>
             </Card>
+            </AnimatedCard>
           </div>
         </div>
       </section>

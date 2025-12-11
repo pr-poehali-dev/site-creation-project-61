@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import { useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { AnimatedCard } from '@/components/AnimatedCard';
 
 const services = [
   {
@@ -289,6 +291,11 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const [expandedBlogPost, setExpandedBlogPost] = useState<number | null>(null);
   const [difficultyFilter, setDifficultyFilter] = useState<string>('все');
+  
+  const servicesHeaderAnim = useScrollAnimation();
+  const filterButtonsAnim = useScrollAnimation();
+  const pricingHeaderAnim = useScrollAnimation();
+  const blogHeaderAnim = useScrollAnimation();
 
   const filteredServices = difficultyFilter === 'все' 
     ? services 
@@ -298,7 +305,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
     <>
       <section id="services" className="py-20 px-6 bg-card/30">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+          <div ref={servicesHeaderAnim.ref} className={`text-center mb-16 scroll-fade-in ${servicesHeaderAnim.isVisible ? 'visible' : ''}`}>
             <Badge className="bg-accent/10 text-accent border-accent/20 mb-4">
               Популярные направления
             </Badge>
@@ -308,7 +315,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
             </p>
           </div>
 
-          <div className="flex justify-center gap-4 mb-12 flex-wrap">
+          <div ref={filterButtonsAnim.ref} className={`flex justify-center gap-4 mb-12 flex-wrap scroll-fade-in ${filterButtonsAnim.isVisible ? 'visible' : ''}`}>
             <Button
               variant={difficultyFilter === 'все' ? 'default' : 'outline'}
               className={difficultyFilter === 'все' ? 'gradient-primary' : ''}
@@ -344,11 +351,10 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredServices.map((service, index) => (
-              <Card 
-                key={index}
-                className="glass border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 cursor-pointer group animate-slide-up overflow-hidden"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+              <AnimatedCard key={index} animation="fade-in" delay={index * 100}>
+                <Card 
+                  className="glass border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 cursor-pointer group overflow-hidden"
+                >
                 {service.image && (
                   <div className="relative h-48 overflow-hidden">
                     <img 
@@ -414,6 +420,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                   )}
                 </CardContent>
               </Card>
+              </AnimatedCard>
             ))}
           </div>
         </div>
@@ -421,7 +428,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
 
       <section id="pricing" className="py-20 px-6">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+          <div ref={pricingHeaderAnim.ref} className={`text-center mb-16 scroll-fade-in ${pricingHeaderAnim.isVisible ? 'visible' : ''}`}>
             <Badge className="bg-secondary/10 text-secondary border-secondary/20 mb-4">
               Туристические пакеты
             </Badge>
@@ -433,11 +440,10 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {pricingPlans.map((plan, index) => (
-              <Card
-                key={index}
-                className={`relative ${plan.highlighted ? 'glass border-primary scale-105 shadow-2xl shadow-primary/20' : 'border-border/50'} transition-all duration-300 hover:scale-105 animate-slide-up`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+              <AnimatedCard key={index} animation="scale-in" delay={index * 150}>
+                <Card
+                  className={`relative ${plan.highlighted ? 'glass border-primary scale-105 shadow-2xl shadow-primary/20' : 'border-border/50'} transition-all duration-300 hover:scale-105`}
+                >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <Badge className="gradient-primary">Популярный</Badge>
@@ -470,6 +476,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                   </Button>
                 </CardContent>
               </Card>
+              </AnimatedCard>
             ))}
           </div>
         </div>
@@ -477,7 +484,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
 
       <section id="blog" className="py-20 px-6 bg-card/30">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+          <div ref={blogHeaderAnim.ref} className={`text-center mb-16 scroll-fade-in ${blogHeaderAnim.isVisible ? 'visible' : ''}`}>
             <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">
               Полезные материалы
             </Badge>
@@ -489,11 +496,10 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
 
           <div className="grid md:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <Card 
-                key={index}
-                className="glass border-border/50 hover:border-primary/50 overflow-hidden group transition-all duration-300 animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+              <AnimatedCard key={index} animation="fade-in" delay={index * 150}>
+                <Card 
+                  className="glass border-border/50 hover:border-primary/50 overflow-hidden group transition-all duration-300"
+                >
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={post.image} 
@@ -527,6 +533,7 @@ export default function ServicesSection({ scrollToSection }: ServicesSectionProp
                   </Button>
                 </CardContent>
               </Card>
+              </AnimatedCard>
             ))}
           </div>
         </div>
