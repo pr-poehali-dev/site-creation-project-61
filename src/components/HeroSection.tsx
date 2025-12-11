@@ -1,21 +1,38 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import { useEffect, useRef } from 'react';
 
 interface HeroSectionProps {
   scrollToSection: (sectionId: string) => void;
 }
 
 export default function HeroSection({ scrollToSection }: HeroSectionProps) {
+  const parallaxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (parallaxRef.current) {
+        const scrolled = window.scrollY;
+        parallaxRef.current.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section id="home" className="relative pt-32 pb-20 px-6 overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with Parallax */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
-          alt="Kamchatka Landscape"
-          className="w-full h-full object-cover opacity-90 brightness-110"
-        />
+        <div ref={parallaxRef} className="absolute inset-0 will-change-transform">
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
+            alt="Kamchatka Landscape"
+            className="w-full h-full object-cover opacity-90 brightness-110"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background"></div>
       </div>
 
