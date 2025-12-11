@@ -10,5 +10,14 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: Yandex
+Allow: /
+
 User-agent: *
 Allow: /
+
+Sitemap: https://kamchatka-adventures41.ru/sitemap.xml
+
+# Disallow admin pages if any
+Disallow: /admin/
+Disallow: /api/
