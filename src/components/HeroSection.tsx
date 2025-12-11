@@ -14,9 +14,9 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
         <img
           src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
           alt="Kamchatka Landscape"
-          className="w-full h-full object-cover opacity-50 brightness-110"
+          className="w-full h-full object-cover opacity-90 brightness-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background"></div>
       </div>
 
       <div className="container mx-auto relative z-10">
